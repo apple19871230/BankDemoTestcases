@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-04-28T06:52:47.654Z",
+    "end": "2019-04-28T06:52:48.156Z",
+    "duration": 502,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "70453893-9faa-493a-a2b7-b03640064d41",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "2099c93f-c13e-43c6-b748-63a48c728c51",
+        "title": "right info Test : payment_method=LOCAL",
+        "fullFile": "/Users/admin/dev/yma_xhs/js_bank_test/test/rightInfoTest.js",
+        "file": "/test/rightInfoTest.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook: 初始化",
+            "fullTitle": "right info Test : payment_method=LOCAL \"before all\" hook: 初始化",
+            "timedOut": false,
+            "duration": 1,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "expect = chai.expect;\nurl = helper.getBaseUrl('online');\napi = helper.getApi('base_bank');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "fb43c5b7-f1b8-48a9-97eb-9b14bb307186",
+            "isHook": true,
+            "skipped": false
+          },
+          {
+            "title": "\"before each\" hook: 每个case执行前操作",
+            "fullTitle": "right info Test : payment_method=LOCAL \"before each\" hook: 每个case执行前操作",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "bodyJson = JSON.parse(file.readFile(homepath+'/test/bank_body.json'));",
+            "err": {},
+            "isRoot": false,
+            "uuid": "21cc561c-5fce-40a7-b2a7-a449598f5800",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "give right info, return 200",
+            "fullTitle": "right info Test : payment_method=LOCAL give right info, return 200",
+            "timedOut": false,
+            "duration": 476,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "bodyJson.payment_method = 'LOCAL';\nbodyJson.account_name = helper.randomString(true,2,10);\ndelete bodyJson.swift_code;\nchai.request(url)\n     .post(api)\n     .set('content-type','application/json')\n     .send(bodyJson)\n     .end(function(err,res){\n        expect(res).to.have.status(200);\n        done();\n     });",
+            "err": {},
+            "isRoot": false,
+            "uuid": "fb67634d-1cca-4573-8828-e3f029940133",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "fb67634d-1cca-4573-8828-e3f029940133"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 476,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2019
+}
